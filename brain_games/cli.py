@@ -1,6 +1,10 @@
+# -*- coding: utf-8 -*- #
+
+"""Импортируем prompt."""
 import prompt
 
+
 def welcome_user():
-    print("Welcome to the Brain Games")
-    name = prompt.string('May I have your name? ')
-    return name
+    """Функция возвращает введенное имя."""
+    print('Welcome to the Brain Games')
+    return prompt.string('May I have your name? ')
