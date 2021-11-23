@@ -7,8 +7,9 @@ from brain_games.cli import welcome_user
 
 def main():
     """Главный вызов."""
-    print("Hello, %s!" % welcome_user())
-
+    user = welcome_user()
+    print("Hello, %s!" % user)
+    return user
 
 if __name__ == '__main__':
     main()

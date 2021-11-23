@@ -2,29 +2,27 @@
 # -*- coding: utf-8 -*- #
 
 """Импортируем prompt, random."""
-import prompt, random
-from brain_games.cli import welcome_user
+from brain_games.scripts.brain_games import main as greeting
+from brain_games.cli import get_rule, ask_question, get_answer, get_correct, end_game
+from brain_games.logic import game_logic, check_answer
 
 def main():
     """Главный вызов."""
-    user = welcome_user()
-    print("Hello, %s!" % user)
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    user_answer = ''
+    user = greeting()
+    get_rule(1)
     user_attempt = 0
     while user_attempt != 3:
-        question_num = random.randrange(0, 100, 1)
-        quesion_answer = 'yes' if question_num % 2 == 0 else 'no'
-        print('Question: %i' % question_num)
-        user_answer = prompt.string('Your answer: ')
-        if user_answer == quesion_answer and user_attempt != 3:
-            print('Correct!')
+        question_num, correct_answer = game_logic(1)
+        ask_question(1, question_num)
+        user_answer = get_answer()
+        if check_answer(user_answer, correct_answer, user) == True:
+            get_correct()
             user_attempt += 1
-            print('Congratulations, %s!' % user) if user_attempt == 3 else None
         else:
-            print("'yes' is wrong answer ;(. Correct answer was 'no'.")
-            print("Let's try again, %s!" % user)
+            end_game(False, user_answer, correct_answer, user)
             break
+    else:
+        end_game(True, user_answer, correct_answer, user)
 
 
 if __name__ == '__main__':
