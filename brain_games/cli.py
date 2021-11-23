@@ -18,11 +18,11 @@ def get_rule(idgame):
         print('What is the result of the expression?')
 
 
-def ask_question(idgame, num):
+def ask_question(idgame, *args):
     if idgame == 1:
-        print('Question: %i' % num)
+        print('Question: %i' % args)
     elif idgame == 2:
-        print('What is the result of the expression?')
+        print('Question: %s %s %s' % (args[0], args[1], args[2]))
 
 
 def get_answer():
