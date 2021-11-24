@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*- #
 
 """Импортируем prompt."""
@@ -6,12 +5,19 @@ import prompt
 
 
 def welcome_user():
-    """Функция возвращает введенное имя."""
-    print('Welcome to the Brain Games')
-    return prompt.string('May I have your name? ')
+    """Функция возвращает введенное имя.
+
+    Returns  # noqa: DAR201
+    """
+    return prompt.string('Welcome to the Brain Games \nMay I have your name? ')
 
 
-def get_rule(idgame):
+def display_rule(idgame):
+    """Функция знакомит пользователя с правилами игры.
+
+    Args:
+        idgame: Description of idgame.
+    """
     if idgame == 1:
         print('Answer "yes" if the number is even, otherwise answer "no".')
     elif idgame == 2:
@@ -19,23 +25,44 @@ def get_rule(idgame):
 
 
 def ask_question(idgame, *args):
+    """Функция вопроса.
+
+    Создает и выводит вопрос на экран.
+
+    Args:
+        idgame: Description of idgame.
+        args: Description of args.
+    """
     if idgame == 1:
-        print('Question: %i' % args)
+        print('Question: {0}'.format(args[0]))
     elif idgame == 2:
-        print('Question: %s %s %s' % (args[0], args[1], args[2]))
+        print('Question: {num1} {znak} {num2}'.format(num1=args[0], znak=args[1], num2=args[2]))
 
 
 def get_answer():
+    """Функция получает ответ пользователя.
+
+    Returns  # noqa: DAR201
+    """
     return prompt.string('Your answer: ')
 
 
-def get_correct():
+def display_correct():
+    """Функция отображает Correct."""
     print('Correct!')
 
 
 def end_game(correct, user_answer, correct_answer, user):
-    if correct == True:
-        print('Congratulations, %s!' % user)
-    elif correct == False:
-        print("'%s' is wrong answer ;(. Correct answer was '%s'." % (user_answer, correct_answer))
-        print("Let's try again, %s!" % user)
+    """Функция отображает конец игры.
+
+    Args:
+        correct: Description of correct.
+        user_answer: Description of user_answer.
+        correct_answer: Description of correct_answer.
+        user: Description of user.
+    """
+    if correct is True:
+        print('Congratulations, {0}!'.format(user))
+    elif correct is False:
+        print("'{uanswer}' is wrong answer ;(. Correct answer was '{canswer}'.".format(uanswer=user_answer, canswer=correct_answer))
+        print("Let's try again, {0}!".format(user))
