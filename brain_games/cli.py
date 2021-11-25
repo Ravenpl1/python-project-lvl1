@@ -22,6 +22,8 @@ def display_rule(idgame):
         print('Answer "yes" if the number is even, otherwise answer "no".')
     elif idgame == 2:
         print('What is the result of the expression?')
+    elif idgame == 3:
+        print('Find the greatest common divisor of given numbers.')
 
 
 def ask_question(idgame, *args):
@@ -37,6 +39,8 @@ def ask_question(idgame, *args):
         print('Question: {0}'.format(args[0]))
     elif idgame == 2:
         print('Question: {num1} {znak} {num2}'.format(num1=args[0], znak=args[1], num2=args[2]))
+    elif idgame == 3:
+        print('Question: {num1} {num2}'.format(num1=args[0], num2=args[1]))
 
 
 def get_answer():

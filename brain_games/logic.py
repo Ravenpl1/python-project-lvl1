@@ -24,6 +24,15 @@ def game_logic(idgame):
         elif rand_math_operation == '*':
             result = rand_num1 * rand_num2
         return rand_num1, rand_math_operation, rand_num2, result
+    elif idgame == 3:
+        rand_num1 = random.randrange(0, 150, 1)
+        rand_num2 = random.randrange(0, 150, 1)
+        num1_gcd = gcd(rand_num1)
+        num2_gcd = gcd(rand_num2)
+        result = max(list(set(num1_gcd) & set(num2_gcd)))
+        print(num1_gcd, num2_gcd)
+        print(list(set(num1_gcd) & set(num2_gcd)))
+        return rand_num1, rand_num2, result
 
 
 def check_answer(user_answer, correct_answer, user):
@@ -40,3 +49,11 @@ def check_answer(user_answer, correct_answer, user):
         return True
     else:
         return False
+
+
+def gcd(var):
+    result = []
+    for i in range(1, var + 1):
+        if var % i == 0:
+            result.append(i)
+    return result
