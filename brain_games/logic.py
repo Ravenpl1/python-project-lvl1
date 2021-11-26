@@ -25,13 +25,11 @@ def game_logic(idgame):
             result = rand_num1 * rand_num2
         return rand_num1, rand_math_operation, rand_num2, result
     elif idgame == 3:
-        rand_num1 = random.randrange(0, 150, 1)
-        rand_num2 = random.randrange(0, 150, 1)
+        rand_num1 = random.randrange(0, 100, 1)
+        rand_num2 = random.randrange(0, 100, 1)
         num1_gcd = gcd(rand_num1)
         num2_gcd = gcd(rand_num2)
         result = max(list(set(num1_gcd) & set(num2_gcd)))
-        print(num1_gcd, num2_gcd)
-        print(list(set(num1_gcd) & set(num2_gcd)))
         return rand_num1, rand_num2, result
 
 

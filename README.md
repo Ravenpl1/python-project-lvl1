@@ -6,3 +6,6 @@ https://asciinema.org/a/8LgXPVkTusGn3IPA9eEzESS2i
 
 ### brain-calc: asciinema (run, game)
 https://asciinema.org/a/X3AYdtSVzvi8BBF4GmAUJVJra
+
+### brain-gcd: asciinema (run, game)
+https://asciinema.org/a/HzFD9NH9synpkVhori7ATmWfH
