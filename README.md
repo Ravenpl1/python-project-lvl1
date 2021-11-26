@@ -9,3 +9,6 @@ https://asciinema.org/a/X3AYdtSVzvi8BBF4GmAUJVJra
 
 ### brain-gcd: asciinema (run, game)
 https://asciinema.org/a/HzFD9NH9synpkVhori7ATmWfH
+
+### brain-progression: asciinema (run, game)
+https://asciinema.org/a/Vm1cTFEKOhAYRgsbi9NtcLdrd

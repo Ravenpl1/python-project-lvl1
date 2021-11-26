@@ -36,7 +36,6 @@ def game_logic(idgame):
         rand_step = random.randrange(1, 10, 1)
         progression = [i for i in range(rand_step, rand_len_progression*rand_step+1, rand_step)]
         rand_question_element = random.randrange(1, rand_len_progression, 1)
-        print(rand_len_progression, rand_step, progression, rand_question_element)
         result = progression[rand_question_element-1]
         progression[rand_question_element-1] = 0
         return progression, result
