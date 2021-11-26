@@ -31,6 +31,15 @@ def game_logic(idgame):
         num2_gcd = gcd(rand_num2)
         result = max(list(set(num1_gcd) & set(num2_gcd)))
         return rand_num1, rand_num2, result
+    elif idgame == 4:
+        rand_len_progression = random.randrange(5, 15, 1)
+        rand_step = random.randrange(1, 10, 1)
+        progression = [i for i in range(rand_step, rand_len_progression*rand_step+1, rand_step)]
+        rand_question_element = random.randrange(1, rand_len_progression, 1)
+        print(rand_len_progression, rand_step, progression, rand_question_element)
+        result = progression[rand_question_element-1]
+        progression[rand_question_element-1] = 0
+        return progression, result
 
 
 def check_answer(user_answer, correct_answer, user):
