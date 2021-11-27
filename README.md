@@ -12,3 +12,6 @@ https://asciinema.org/a/HzFD9NH9synpkVhori7ATmWfH
 
 ### brain-progression: asciinema (run, game)
 https://asciinema.org/a/Vm1cTFEKOhAYRgsbi9NtcLdrd
+
+### brain-prime: asciinema (run, game)
+https://asciinema.org/a/akapCbCkem9ZGW9oJYqCELRaw
