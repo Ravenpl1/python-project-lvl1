@@ -26,6 +26,8 @@ def display_rule(idgame):
         print('Find the greatest common divisor of given numbers.')
     elif idgame == 4:
         print('What number is missing in the progression?')
+    elif idgame == 5:
+        print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
 
 def ask_question(idgame, *args):
@@ -45,6 +47,8 @@ def ask_question(idgame, *args):
         print('Question: {num1} {num2}'.format(num1=args[0], num2=args[1]))
     elif idgame == 4:
         print('Question: ' + ' '.join(list(map(str, ['..' if x==0 else x for x in args[0]]))))
+    if idgame == 5:
+        print('Question: {0}'.format(args[0]))
 
 
 def get_answer():
