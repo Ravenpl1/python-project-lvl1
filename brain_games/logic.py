@@ -3,8 +3,6 @@
 """Импортируем welcome_user."""
 import random
 
-from brain_games.cli import display_correct
-
 
 def game_logic(idgame):
     """Функция описывает матлогику игры
@@ -35,7 +33,7 @@ def game_logic(idgame):
     elif idgame == 4:
         rand_len_progression = random.randrange(5, 15, 1)
         rand_step = random.randrange(1, 10, 1)
-        progression = [i for i in range(rand_step, rand_len_progression*rand_step+1, rand_step)]
+        progression = [i for i in range(rand_step, rand_len_progression * rand_step + 1, rand_step)]
         rand_question_element = random.randrange(1, rand_len_progression, 1)
         correct_answer = progression[rand_question_element-1]
         progression[rand_question_element-1] = 0
