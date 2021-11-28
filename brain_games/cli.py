@@ -43,12 +43,12 @@ def ask_question(idgame, *args):
         print('Question: {0}'.format(args[0]))
     elif idgame == 2:
         print('Question: {num1} {znak} {num2}'
-        .format(num1=args[0], znak=args[1], num2=args[2]))
+            .format(num1=args[0], znak=args[1], num2=args[2]))
     elif idgame == 3:
         print('Question: {num1} {num2}'.format(num1=args[0], num2=args[1]))
     elif idgame == 4:
         print('Question: ' + ' '
-        .join(list(map(str, ['..' if x == 0 else x for x in args[0]]))))
+            .join(list(map(str, ['..' if x == 0 else x for x in args[0]]))))
     if idgame == 5:
         print('Question: {0}'.format(args[0]))
 
@@ -79,5 +79,5 @@ def end_game(correct, user_answer, correct_answer, user):
         print('Congratulations, {0}!'.format(user))
     elif correct is False:
         print("'{uanswer}' is wrong answer ;(. Correct answer was '{canswer}'."
-        .format(uanswer=user_answer, canswer=correct_answer))
+            .format(uanswer=user_answer, canswer=correct_answer))
         print("Let's try again, {0}!".format(user))
