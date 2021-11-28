@@ -19,7 +19,8 @@ def main():
     display_rule(2)
     user_attempt = 0
     while user_attempt != 3:
-        question_num1, question_operation, question_num2, correct_answer = game_logic(2)
+        (question_num1, question_operation,
+            question_num2, correct_answer) = game_logic(2)
         ask_question(2, question_num1, question_operation, question_num2)
         user_answer = get_answer()
         if check_answer(user_answer, str(correct_answer), user) is True:
