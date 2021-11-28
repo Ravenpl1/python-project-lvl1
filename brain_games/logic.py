@@ -6,7 +6,7 @@ import random
 
 def game_logic(idgame): # noqa: C901
     """Функция описывает матлогику игры
-    и возвращает аргументы вопроса и правильного ответа"""
+      и возвращает аргументы вопроса и правильного ответа"""
     if idgame == 1:
         rand_num1 = random.randrange(0, 100, 1)
         correct_answer = 'yes' if rand_num1 % 2 == 0 else 'no'
