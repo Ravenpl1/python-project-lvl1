@@ -4,7 +4,7 @@
 import random
 
 
-def game_logic(idgame):
+def game_logic(idgame): # noqa: C901
     """Функция описывает матлогику игры
     и возвращает аргументы вопроса и правильного ответа"""
     if idgame == 1:
