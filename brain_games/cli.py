@@ -79,5 +79,5 @@ def end_game(correct, user_answer, correct_answer, user):
         print('Congratulations, {0}!'.format(user))
     elif correct is False:
         print("'{uanswer}' is wrong answer ;(. Correct answer was '{canswer}'."
-            .format(uanswer=user_answer, canswer=correct_answer))
+                .format(uanswer=user_answer, canswer=correct_answer))
         print("Let's try again, {0}!".format(user))
