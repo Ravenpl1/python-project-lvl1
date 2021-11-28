@@ -33,10 +33,12 @@ def game_logic(idgame):
     elif idgame == 4:
         rand_len_progression = random.randrange(5, 15, 1)
         rand_step = random.randrange(1, 10, 1)
-        progression = [i for i in range(rand_step, rand_len_progression * rand_step + 1, rand_step)]
+        progression = [i for i in range(rand_step,
+                                        rand_len_progression * rand_step + 1,
+                                        rand_step)]
         rand_question_element = random.randrange(1, rand_len_progression, 1)
-        correct_answer = progression[rand_question_element-1]
-        progression[rand_question_element-1] = 0
+        correct_answer = progression[rand_question_element - 1]
+        progression[rand_question_element - 1] = 0
         return progression, correct_answer
     elif idgame == 5:
         rand_num1 = random.randrange(0, 101, 1)
@@ -47,12 +49,12 @@ def game_logic(idgame):
 
 def check_answer(user_answer, correct_answer, user):
     """Функция проверяет ответ пользователя
-    
+
     Args:
         user_answer: Description of user_answer.
         correct_answer: Description of correct_answer.
         user: Description of user.
-    
+
     Returns  # noqa: DAR201
     """
     if user_answer == correct_answer:
