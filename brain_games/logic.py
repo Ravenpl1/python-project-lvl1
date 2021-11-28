@@ -24,8 +24,8 @@ def game_logic(idgame):
             correct_answer = rand_num1 * rand_num2
         return rand_num1, rand_math_operation, rand_num2, correct_answer
     elif idgame == 3:
-        rand_num1 = random.randrange(0, 100, 1)
-        rand_num2 = random.randrange(0, 100, 1)
+        rand_num1 = random.randrange(1, 100, 1)
+        rand_num2 = random.randrange(1, 100, 1)
         num1_gcd = gcd(rand_num1)
         num2_gcd = gcd(rand_num2)
         correct_answer = max(list(set(num1_gcd) & set(num2_gcd)))
