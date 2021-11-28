@@ -47,17 +47,17 @@ def game_logic(idgame):
         return (rand_num1, correct_answer)
 
 
-def check_answer(user_answer, correct_answer, user):
+def check_answer(user_answer, cor_answer, user):
     """Функция проверяет ответ пользователя
 
     Args:
         user_answer: Description of user_answer.
-        correct_answer: Description of correct_answer.
+        cor_answer: Description of correct_answer.
         user: Description of user.
 
     Returns  # noqa: DAR201
     """
-    if user_answer == correct_answer:
+    if user_answer == cor_answer:
         return True
     else:
         return False
