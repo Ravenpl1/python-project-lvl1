@@ -2,22 +2,10 @@
 # -*- coding: utf-8 -*- #
 
 """Импортируем prompt, random."""
-from brain_games.cli import (
-    ask_question,
-    display_correct,
-    display_rule,
-    end_game,
-    get_answer,
-)
-from brain_games.logic import check_answer, game_logic
-from brain_games.scripts.brain_games import main as greeting
+import random
 
 
-def main():
-    pass
-
-
-def brain_calc_logic():
+def brain_calc():
     """Функция описывает матлогику игры
     и возвращает аргументы вопроса и правильного ответа
     id games"""
@@ -31,8 +19,9 @@ def brain_calc_logic():
         correct_answer = rand_num1 - rand_num2
     elif rand_math_operation == '*':
         correct_answer = rand_num1 * rand_num2
-    return rand_num1, rand_math_operation, rand_num2, correct_answer
-
-
-if __name__ == '__main__':
-    main()
+    return {'correct_answer': correct_answer,
+            'items': {'number1': rand_num1,
+                    'math_operator': rand_math_operation,
+                    'number2': rand_num2
+                    }
+            }

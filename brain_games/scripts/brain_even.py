@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*- #
 
-"""Импортируем welcome_user."""
-from brain_games.cli import welcome_user
+"""Импортируем games.even и .logic"""
+from brain_games.games.even import brain_even
+from brain_games.logic import games_logic
 
 
 def main():
-    """Главный вызов.
-
-    Returns  # noqa: DAR201
-    """
-    user = welcome_user()
-    print('Hello, {0}!'.format(user))
-    return user
+    idgame = 1
+    games_logic(brain_even, idgame)
 
 
 if __name__ == '__main__':

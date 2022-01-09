@@ -40,7 +40,19 @@ def ask_question(idgame, items):
         args: Description of args.
     """
     if idgame == 1:
-        print('Question: {0}'.format(items['number1']))
+        print('Question: {0}'.format(items['number']))
+    elif idgame == 2:
+        print('Question: {num1} {znak} {num2}'
+              .format(num1=items['number1'],
+                    znak=items['math_operator'],
+                    num2=items['number2']
+                    )
+            )
+    elif idgame == 3:
+        print('Question: {num1} {num2}'.format(num1=items['number1'],
+                                            num2=items['number2']
+                                            )
+            )
 
 
 def get_answer():
