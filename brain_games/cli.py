@@ -53,7 +53,11 @@ def ask_question(idgame, items):
                                             num2=items['number2']
                                             )
             )
-
+    elif idgame == 4:
+        print('Question: ' + ' '
+              .join(list(map(str, ['..' if x == 0 else x for x in items['number']]))))
+    elif idgame == 5:
+        print('Question: {0}'.format(items['number']))
 
 def get_answer():
     """Функция получает ответ пользователя.
