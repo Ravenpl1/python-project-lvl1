@@ -14,22 +14,22 @@ from brain_games.scripts.brain_games import main as greeting
 
 
 def main():
-    """Главный вызов."""
-    user = greeting()
-    display_rule(4)
-    user_attempt = 0
-    while user_attempt != 3:
-        question_num1, correct_answer = game_logic(4)
-        ask_question(4, question_num1)
-        user_answer = get_answer()
-        if check_answer(user_answer, str(correct_answer), user) is True:
-            display_correct()
-            user_attempt += 1
-        else:
-            end_game(False, user_answer, str(correct_answer), user)
-            break
-    else:
-        end_game(True, user_answer, str(correct_answer), user)
+    pass
+
+
+def brain_progression_logic():
+    """Функция описывает матлогику игры
+    и возвращает аргументы вопроса и правильного ответа
+    id games"""
+    rand_len_progression = random.randrange(5, 15, 1)
+    rand_step = random.randrange(1, 10, 1)
+    progression = [i for i in range(rand_step,
+                                    rand_len_progression * rand_step + 1,
+                                    rand_step)]
+    rand_question_element = random.randrange(1, rand_len_progression, 1)
+    correct_answer = progression[rand_question_element - 1]
+    progression[rand_question_element - 1] = 0
+    return progression, correct_answer
 
 
 if __name__ == '__main__':

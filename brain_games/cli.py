@@ -30,7 +30,7 @@ def display_rule(idgame):
         print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
 
-def ask_question(idgame, *args):
+def ask_question(idgame, items):
     """Функция вопроса.
 
     Создает и выводит вопрос на экран.
@@ -40,7 +40,7 @@ def ask_question(idgame, *args):
         args: Description of args.
     """
     if idgame == 1:
-        print('Question: {0}'.format(args[0]))
+        print('Question: {0}'.format(items['number1']))
     elif idgame == 2:
         print('Question: {num1} {znak} {num2}'
               .format(num1=args[0], znak=args[1], num2=args[2]))
