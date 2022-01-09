@@ -9,7 +9,7 @@ def welcome_user():
 
     Returns  # noqa: DAR201
     """
-    return prompt.string('Welcome to the Brain Games \nMay I have your name? ')
+    return prompt.string('Welcome to the Brain Games! \nMay I have your name? ')
 
 
 def display_rule(idgame):
