@@ -41,16 +41,6 @@ def ask_question(idgame, items):
     """
     if idgame == 1:
         print('Question: {0}'.format(items['number1']))
-    elif idgame == 2:
-        print('Question: {num1} {znak} {num2}'
-              .format(num1=args[0], znak=args[1], num2=args[2]))
-    elif idgame == 3:
-        print('Question: {num1} {num2}'.format(num1=args[0], num2=args[1]))
-    elif idgame == 4:
-        print('Question: ' + ' '
-              .join(list(map(str, ['..' if x == 0 else x for x in args[0]]))))
-    if idgame == 5:
-        print('Question: {0}'.format(args[0]))
 
 
 def get_answer():
