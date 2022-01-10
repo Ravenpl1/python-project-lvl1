@@ -6,6 +6,11 @@ from brain_games.cli import welcome_user
 
 user = ''
 
+
+def main():
+    greeting()
+
+
 def greeting():
     """Главный вызов.
 
@@ -17,4 +22,4 @@ def greeting():
 
 
 if __name__ == '__main__':
-    greeting()
+    main()
