@@ -8,11 +8,12 @@ from brain_games.cli import (
     end_game,
     get_answer,
 )
-from brain_games.scripts.brain_games import main as greeting
+import brain_games.scripts.brain_games as brain_games
 
 
 def games_logic(game, idgame):
-    user = greeting()
+    brain_games.greeting()
+    user = brain_games.user
     display_rule(idgame)
     user_attempt = 0
     while user_attempt != 3:

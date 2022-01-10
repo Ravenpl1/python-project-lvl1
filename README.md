@@ -4,6 +4,9 @@
 ### CodeClimate
 <a href="https://codeclimate.com/github/Ravenpl1/python-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/1f25fbfef227331531ee/maintainability" /></a>
 
+### brain-games (install, uninstall)
+
+
 ### brain-even: asciinema (install, run, game)
 https://asciinema.org/a/8LgXPVkTusGn3IPA9eEzESS2i
 

@@ -4,15 +4,17 @@
 from brain_games.cli import welcome_user
 
 
-def main():
+user = ''
+
+def greeting():
     """Главный вызов.
 
     Returns  # noqa: DAR201
     """
+    global user
     user = welcome_user()
     print('Hello, {0}!'.format(user))
-    return user
 
 
 if __name__ == '__main__':
-    main()
+    greeting()
