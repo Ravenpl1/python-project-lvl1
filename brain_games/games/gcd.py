@@ -16,7 +16,7 @@ def brain_gcd():
     correct_answer = max(list(set(num1_gcd) & set(num2_gcd)))
     return {
         'correct_answer': correct_answer,
-        'items': 
+        'items':
         {
             'number1': rand_num1,
             'number2': rand_num2
