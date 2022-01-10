@@ -14,8 +14,11 @@ def brain_gcd():
     num1_gcd = [i for i in range(1, rand_num1 + 1) if rand_num1 % i == 0]
     num2_gcd = [i for i in range(1, rand_num2 + 1) if rand_num2 % i == 0]
     correct_answer = max(list(set(num1_gcd) & set(num2_gcd)))
-    return {'correct_answer': correct_answer,
-            'items': {'number1': rand_num1,
-                    'number2': rand_num2
-                    }
-            }
+    return {
+        'correct_answer': correct_answer,
+        'items': 
+        {
+            'number1': rand_num1,
+            'number2': rand_num2
+        }
+    }
