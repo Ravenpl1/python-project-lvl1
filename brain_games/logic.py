@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*- #
 
 """Импортируем welcome_user."""
+import brain_games.scripts.brain_games as brain_games
 from brain_games.cli import (
     ask_question,
     display_correct,
@@ -8,7 +9,6 @@ from brain_games.cli import (
     end_game,
     get_answer,
 )
-import brain_games.scripts.brain_games as brain_games
 
 
 def games_logic(game, idgame):
