@@ -7,8 +7,14 @@ build:
 publish:
 	poetry publish --dry-run
 
+asciinema-rec:
+	poetry run asciinema rec
+
 package-install:
-	python3 -m pip install --user dist/*.whl
+	python -m pip install --user dist/hexlet_code-0.1.0-py3-none-any.whl
+
+package-unstall:
+	python -m pip uninstall hexlet-code
 
 brain-games:
 	poetry run brain-games
