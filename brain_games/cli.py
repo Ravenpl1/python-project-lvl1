@@ -37,7 +37,7 @@ def ask_question(idgame, items):
 
     Args:
         idgame: Description of idgame.
-        args: Description of args.
+        items: Description of args.
     """
     if idgame == 1:
         print('Question: {0}'.format(items['number']))
