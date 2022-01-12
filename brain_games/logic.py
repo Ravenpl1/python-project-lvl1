@@ -7,11 +7,22 @@ from brain_games.cli import (
     display_rule,
     end_game,
     get_answer,
+    lost_game,
     welcome_user,
 )
 
 
 def games_logic(game):
+    """Содержит общую логику игры.
+
+    Args:
+        game: принимает функцию игры.
+    Returns:
+        None
+
+    # noqa: DAR003
+
+    """
     user = welcome_user()
     user_attempt = 0
     generate_data = game()
@@ -25,22 +36,20 @@ def games_logic(game):
             generate_data = game()
             user_attempt += 1
         else:
-            end_game(False, user_answer, correct_answer, user)
+            lost_game(user_answer, correct_answer, user)
             break
     else:
-        end_game(True, user_answer, correct_answer, user)
+        end_game(user)
 
 
 def check_answer(user_answer, cor_answer):
-    """Функция проверяет ответ пользователя
+    """Функция проверяет ответ пользователя.
 
     Args:
         user_answer: Description of user_answer.
         cor_answer: Description of correct_answer.
 
-    Returns  # noqa: DAR201
+    Returns:
+        bool: True если корректный ответ, иначе False.
     """
-    if user_answer == cor_answer:
-        return True
-    else:
-        return False
+    return user_answer == cor_answer

@@ -5,9 +5,10 @@ import prompt
 
 
 def welcome_user():
-    """Функция возвращает введенное имя.
+    """Функция приветствует и возвращает введенное имя.
 
-    Returns  # noqa: DAR201
+    Returns:
+        user: return user name.
     """
     user = prompt.string('Welcome to the Brain Games! \nMay I have your name? ')
     print('Hello, {0}!'.format(user))
@@ -15,22 +16,19 @@ def welcome_user():
 
 
 def display_rule(rule):
-    """Функция знакомит пользователя с правилами игры.
+    """Функция отображает правила игры.
 
     Args:
-        idgame: Description of idgame.
+        rule: Description of rule.
     """
     print(rule)
 
 
 def ask_question(question):
-    """Функция вопроса.
-
-    Создает и выводит вопрос на экран.
+    """Функция отображает вопрос игры.
 
     Args:
-        idgame: Description of idgame.
-        items: Description of args.
+        question: Description of question.
     """
     print(question)
 
@@ -38,7 +36,8 @@ def ask_question(question):
 def get_answer():
     """Функция получает ответ пользователя.
 
-    Returns  # noqa: DAR201
+    Returns:
+        prompt: return user responce.
     """
     return prompt.string('Your answer: ')
 
@@ -48,18 +47,24 @@ def display_correct():
     print('Correct!')
 
 
-def end_game(correct, user_answer, correct_answer, user):
-    """Функция отображает конец игры.
+def lost_game(user_answer, correct_answer, user):
+    """Функция отображает проигрыш.
 
     Args:
-        correct: Description of correct.
         user_answer: Description of user_answer.
         correct_answer: Description of correct_answer.
         user: Description of user.
     """
-    if correct is True:
-        print('Congratulations, {0}!'.format(user))
-    elif correct is False:
-        print("'{uanswer}' is wrong answer ;(. Correct answer was '{canswer}'."
-              .format(uanswer=user_answer, canswer=correct_answer))
-        print("Let's try again, {0}!".format(user))
+    text1 = "'{0}' is wrong answer ;(. ".format(user_answer)
+    text2 = "Correct answer was '{0}'.".format(correct_answer)
+    print(text1 + text2)
+    print("Let's try again, {0}!".format(user))
+
+
+def end_game(user):
+    """Функция отображает конец игры.
+
+    Args:
+        user: Description of user.
+    """
+    print('Congratulations, {0}!'.format(user))
