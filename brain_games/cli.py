@@ -9,28 +9,21 @@ def welcome_user():
 
     Returns  # noqa: DAR201
     """
-    return prompt.string('Welcome to the Brain Games! \nMay I have your name? ')
+    user = prompt.string('Welcome to the Brain Games! \nMay I have your name? ')
+    print('Hello, {0}!'.format(user))
+    return user
 
 
-def display_rule(idgame):
+def display_rule(rule):
     """Функция знакомит пользователя с правилами игры.
 
     Args:
         idgame: Description of idgame.
     """
-    if idgame == 1:
-        print('Answer "yes" if the number is even, otherwise answer "no".')
-    elif idgame == 2:
-        print('What is the result of the expression?')
-    elif idgame == 3:
-        print('Find the greatest common divisor of given numbers.')
-    elif idgame == 4:
-        print('What number is missing in the progression?')
-    elif idgame == 5:
-        print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    print(rule)
 
 
-def ask_question(idgame, items):
+def ask_question(question):
     """Функция вопроса.
 
     Создает и выводит вопрос на экран.
@@ -39,24 +32,7 @@ def ask_question(idgame, items):
         idgame: Description of idgame.
         items: Description of args.
     """
-    if idgame == 1:
-        print('Question: {0}'.format(items['number']))
-    elif idgame == 2:
-        print('Question: {num1} {znak} {num2}'
-              .format(num1=items['number1'],
-                      znak=items['math_operator'],
-                      num2=items['number2']))
-    elif idgame == 3:
-        print('Question: {num1} {num2}'
-              .format(num1=items['number1'],
-                      num2=items['number2']))
-    elif idgame == 4:
-        print('Question: ' + ' '
-              .join(list
-                    (map(str,
-                         ['..' if x == 0 else x for x in items['number']]))))
-    elif idgame == 5:
-        print('Question: {0}'.format(items['number']))
+    print(question)
 
 
 def get_answer():

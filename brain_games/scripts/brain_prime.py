@@ -6,8 +6,7 @@ from brain_games.logic import games_logic
 
 
 def main():
-    idgame = 5
-    games_logic(brain_prime, idgame)
+    games_logic(brain_prime)
 
 
 if __name__ == '__main__':

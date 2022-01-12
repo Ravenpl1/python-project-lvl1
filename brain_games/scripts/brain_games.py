@@ -3,21 +3,9 @@
 """Импортируем welcome_user."""
 from brain_games.cli import welcome_user
 
-user = ''
-
 
 def main():
-    greeting()
-
-
-def greeting():
-    """Главный вызов.
-
-    Returns  # noqa: DAR201
-    """
-    global user
-    user = welcome_user()
-    print('Hello, {0}!'.format(user))
+    welcome_user()
 
 
 if __name__ == '__main__':

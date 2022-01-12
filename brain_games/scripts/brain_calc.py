@@ -13,8 +13,7 @@ def main():
     Returns:
         None
     """
-    idgame = 2
-    games_logic(brain_calc, idgame)
+    games_logic(brain_calc)
 
 
 if __name__ == '__main__':

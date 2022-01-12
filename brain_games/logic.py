@@ -1,29 +1,28 @@
 # -*- coding: utf-8 -*- #
 
 """Импортируем welcome_user."""
-import brain_games.scripts.brain_games as brain_games
 from brain_games.cli import (
     ask_question,
     display_correct,
     display_rule,
     end_game,
     get_answer,
+    welcome_user,
 )
 
 
-def games_logic(game, idgame):
-    brain_games.greeting()
-    user = brain_games.user
-    display_rule(idgame)
+def games_logic(game):
+    user = welcome_user()
     user_attempt = 0
+    generate_data = game()
+    display_rule(generate_data['rule'])
     while user_attempt != 3:
-        generate_data = game()
-        items = generate_data['items']
         correct_answer = str(generate_data['correct_answer'])
-        ask_question(idgame, items)
+        ask_question(generate_data['question'])
         user_answer = get_answer()
         if check_answer(user_answer, correct_answer) is True:
             display_correct()
+            generate_data = game()
             user_attempt += 1
         else:
             end_game(False, user_answer, correct_answer, user)
@@ -38,7 +37,6 @@ def check_answer(user_answer, cor_answer):
     Args:
         user_answer: Description of user_answer.
         cor_answer: Description of correct_answer.
-        user: Description of user.
 
     Returns  # noqa: DAR201
     """

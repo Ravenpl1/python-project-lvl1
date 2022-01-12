@@ -17,6 +17,10 @@ def brain_progression():
     rand_question_element = random.randrange(1, rand_len_progression, 1)
     correct_answer = progression[rand_question_element - 1]
     progression[rand_question_element - 1] = 0
+    rule = 'What number is missing in the progression?'
+    question_data = list(map(str, ['..' if x == 0 else x for x in progression]))
+    question = 'Question: ' + ' '.join(question_data)
     return {'correct_answer': correct_answer,
-            'items': {'number': progression}
+            'rule': rule,
+            'question': question
             }
