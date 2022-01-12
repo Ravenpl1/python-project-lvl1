@@ -33,3 +33,19 @@ brain-progression:
 
 lint:
 	poetry run flake8 brain_games
+
+test:
+	poetry run pytest
+
+test-coverage:
+	poetry run pytest --cov=brain_games --cov-report xml
+
+selfcheck:
+	poetry check
+
+check: selfcheck test lint
+
+build: check
+	poetry build
+
+.PHONY: install test lint selfcheck check build
