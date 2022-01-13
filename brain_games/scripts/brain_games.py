@@ -5,6 +5,7 @@ from brain_games.cli import welcome_user
 
 
 def main():
+    """Скрипт запускающий игру brain-games."""
     welcome_user()
 
 

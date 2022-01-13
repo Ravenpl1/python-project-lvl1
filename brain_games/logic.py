@@ -17,11 +17,6 @@ def games_logic(game):
 
     Args:
         game: принимает функцию игры.
-    Returns:
-        None
-
-    # noqa: DAR003
-
     """
     user = welcome_user()
     user_attempt = 0
