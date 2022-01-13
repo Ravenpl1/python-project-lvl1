@@ -8,7 +8,7 @@ def brain_progression():
     """Функция игры brain-progression.
 
     Returns:
-        Dict: True если корректный ответ, иначе False.
+        Dict: правильный ответ, правила, вопрос.
     """
     progression = get_progression()
     correct_answer = get_random_element(progression)
@@ -24,17 +24,30 @@ def brain_progression():
 
 
 def get_progression():
+    """Функция генерации прогресии.
+
+    Returns:
+        progression: арифметическая прогрессия.
+    """
     cryptogen = SystemRandom()
-    rand_len_progression = cryptogen.randrange(5, 15)
-    rand_step = cryptogen.randrange(1, 10)
-    progression = list(map(str, range(rand_step,
-                                      rand_len_progression * rand_step + 1,
-                                      rand_step)))
-    return progression
+    max_len = 11
+    rand_lenght = cryptogen.randrange(start=5, stop=max_len)
+    rand_step = cryptogen.randrange(start=1, stop=10)
+    progression = map(
+        str, range(rand_step, (rand_lenght * rand_step) + 1, rand_step),
+    )
+    return list(progression)
 
 
 def get_random_element(progression):
+    """Функция случайного выбора элемента списка.
+
+    Args:
+        progression: входящий список.
+
+    Returns:
+        progression[rand_item]: элемент списка.
+    """
     cryptogen = SystemRandom()
     rand_item = cryptogen.randrange(len(progression))
-    random_element = progression[rand_item]
-    return random_element
+    return progression[rand_item]
