@@ -35,12 +35,24 @@ def get_max_gcd(two_numbers):
     """
     rand_num1 = two_numbers[0]
     rand_num2 = two_numbers[1]
-    num1_gcd = get_gcd(rand_num1)
-    num2_gcd = get_gcd(rand_num2)
+    num1_gcd = devisors(rand_num1)
+    num2_gcd = devisors(rand_num2)
     return max(list(set(num1_gcd) & set(num2_gcd)))
 
 
-def get_gcd(number):
+def get_two_numbers():
+    """Функция случайной генерации двух чисел(1-100).
+
+    Returns:
+        tupl: 2 числа.
+    """
+    cryptogen = SystemRandom()
+    rand_num1 = cryptogen.randrange(start=1, stop=100)
+    rand_num2 = cryptogen.randrange(start=1, stop=100)
+    return (rand_num1, rand_num2)
+
+
+def devisors(number):
     """Функция генерации списка делителей.
 
     Args:
@@ -54,15 +66,3 @@ def get_gcd(number):
         if number % element == 0:
             gcd.append(element)
     return gcd
-
-
-def get_two_numbers():
-    """Функция случайной генерации двух чисел.
-
-    Returns:
-        tupl: 2 числа.
-    """
-    cryptogen = SystemRandom()
-    rand_num1 = cryptogen.randrange(start=1, stop=100)
-    rand_num2 = cryptogen.randrange(start=1, stop=100)
-    return (rand_num1, rand_num2)
