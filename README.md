@@ -9,9 +9,6 @@
 ### wemake-python-styleguide
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
-### wemake-python-styleguide
-
-
 ### brain-games: asciinema (install, uninstall)
 https://asciinema.org/a/4W6l3pixk9cQcIfXODpu7pBhF
 
