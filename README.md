@@ -4,6 +4,9 @@
 ### Style
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
+### Python CI
+[![Python CI](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/pyci.yml/badge.svg)](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/pyci.yml)
+
 ### CodeClimate
 <a href="https://codeclimate.com/github/Ravenpl1/python-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/1f25fbfef227331531ee/maintainability" /></a>
 <a href="https://codeclimate.com/github/Ravenpl1/python-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1f25fbfef227331531ee/test_coverage" /></a>
