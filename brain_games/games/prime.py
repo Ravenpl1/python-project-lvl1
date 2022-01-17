@@ -3,6 +3,7 @@
 """Импортируем random."""
 from random import SystemRandom
 
+# Константы.
 RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 LEN_RANDOM = (0, 100)
 

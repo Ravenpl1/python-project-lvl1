@@ -3,6 +3,7 @@
 """Импортируем random."""
 from random import SystemRandom
 
+# Константы.
 RULE = 'What number is missing in the progression?'
 LEN_PROGRESSION = (5, 11)
 LEN_STEP = (1, 10)

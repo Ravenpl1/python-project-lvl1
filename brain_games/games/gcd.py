@@ -3,6 +3,7 @@
 """Импортируем prompt, random."""
 from random import SystemRandom
 
+# Константы.
 RULE = 'Find the greatest common divisor of given numbers.'
 LEN_RANDOM = (0, 100)
 
@@ -42,7 +43,7 @@ def get_max_gcd(number1, number2):
 
 
 def get_two_numbers():
-    """Функция случайной генерации двух чисел(1-100).
+    """Функция случайной генерации двух чисел.
 
     Returns:
         tupl: 2 числа.
@@ -50,7 +51,7 @@ def get_two_numbers():
     cryptogen = SystemRandom()
     rand_num1 = cryptogen.randrange(*LEN_RANDOM)
     rand_num2 = cryptogen.randrange(*LEN_RANDOM)
-    return (rand_num1, rand_num2)
+    return rand_num1, rand_num2
 
 
 def devisors(number):

@@ -3,6 +3,7 @@
 """Импортируем prompt, random."""
 from random import SystemRandom
 
+# Константы.
 RULE = 'What is the result of the expression?'
 LEN_RANDOM = (0, 10)
 

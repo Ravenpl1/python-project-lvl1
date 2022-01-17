@@ -11,14 +11,15 @@ from brain_games.cli import (
     welcome_user,
 )
 
+# Константы.
 ROUNDS = 3
 
 
 def games_logic(game):
-    """Содержит общую логику игры.
+    """Функция общей логики игр.
 
     Args:
-        game: принимает функцию игры.
+        game: игра.
     """
     user = welcome_user()
     generate_data = game()
@@ -27,7 +28,7 @@ def games_logic(game):
         correct_answer = str(generate_data['correct_answer'])
         ask_question(generate_data['question'])
         user_answer = get_answer()
-        if check_answer(user_answer, correct_answer) is True:
+        if user_answer == correct_answer:
             display_correct()
             generate_data = game()
         else:
@@ -35,16 +36,3 @@ def games_logic(game):
             break
     else:
         end_game(user)
-
-
-def check_answer(user_answer, cor_answer):
-    """Функция проверяет ответ пользователя.
-
-    Args:
-        user_answer: Description of user_answer.
-        cor_answer: Description of correct_answer.
-
-    Returns:
-        bool: True если корректный ответ, иначе False.
-    """
-    return user_answer == cor_answer
