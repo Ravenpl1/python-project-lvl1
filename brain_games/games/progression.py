@@ -3,6 +3,10 @@
 """Импортируем random."""
 from random import SystemRandom
 
+RULE = 'What number is missing in the progression?'
+LEN_PROGRESSION = (5, 11)
+LEN_STEP = (1, 10)
+
 
 def brain_progression():
     """Функция игры brain-progression.
@@ -14,11 +18,10 @@ def brain_progression():
     correct_answer = get_random_element(progression)
     progression[progression.index(correct_answer)] = '..'
     question_data = ' '.join(progression)
-    rule = 'What number is missing in the progression?'
     question = 'Question: {0}'.format(question_data)
     return {
         'correct_answer': correct_answer,
-        'rule': rule,
+        'rule': RULE,
         'question': question,
     }
 
@@ -30,9 +33,8 @@ def get_progression():
         progression: арифметическая прогрессия.
     """
     cryptogen = SystemRandom()
-    max_len = 11
-    rand_lenght = cryptogen.randrange(start=5, stop=max_len)
-    rand_step = cryptogen.randrange(start=1, stop=10)
+    rand_lenght = cryptogen.randrange(*LEN_PROGRESSION)
+    rand_step = cryptogen.randrange(*LEN_STEP)
     progression = map(
         str, range(rand_step, (rand_lenght * rand_step) + 1, rand_step),
     )

@@ -3,6 +3,9 @@
 """Импортируем random."""
 from random import SystemRandom
 
+RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+LEN_RANDOM = (0, 100)
+
 
 def brain_prime():
     """Функция игры brain-prime.
@@ -10,29 +13,29 @@ def brain_prime():
     Returns:
         Dict: правильный ответ, правила, вопрос.
     """
-    rand_num1 = SystemRandom().randrange(0, 100)
-    num1_gcd = devisors(rand_num1)
-    correct_answer = 'yes' if len(num1_gcd) == 2 else 'no'
-    rule = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    rand_num1 = SystemRandom().randrange(*LEN_RANDOM)
+    num_is_prime = is_prime(rand_num1)
+    correct_answer = 'yes' if num_is_prime else 'no'
     question = 'Question: {0}'.format(rand_num1)
     return {
         'correct_answer': correct_answer,
-        'rule': rule,
+        'rule': RULE,
         'question': question,
     }
 
 
-def devisors(number):
-    """Функция генерации списка делителей.
+def is_prime(number):
+    """Функция предикат простого числа.
 
     Args:
         number: число.
 
     Returns:
-        list: список делителей.
+        bool: True если число простое.
     """
-    gcd = []
-    for element in range(1, number + 1):
+    if number < 2:
+        return False
+    for element in range(2, int(number / 2) + 1):
         if number % element == 0:
-            gcd.append(element)
-    return gcd
+            return False
+    return True

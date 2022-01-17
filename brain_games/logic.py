@@ -11,6 +11,8 @@ from brain_games.cli import (
     welcome_user,
 )
 
+ROUNDS = 3
+
 
 def games_logic(game):
     """Содержит общую логику игры.
@@ -19,17 +21,15 @@ def games_logic(game):
         game: принимает функцию игры.
     """
     user = welcome_user()
-    user_attempt = 0
     generate_data = game()
     display_rule(generate_data['rule'])
-    while user_attempt != 3:
+    for _ in range(ROUNDS):
         correct_answer = str(generate_data['correct_answer'])
         ask_question(generate_data['question'])
         user_answer = get_answer()
         if check_answer(user_answer, correct_answer) is True:
             display_correct()
             generate_data = game()
-            user_attempt += 1
         else:
             lost_game(user_answer, correct_answer, user)
             break

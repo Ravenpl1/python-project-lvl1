@@ -3,6 +3,9 @@
 """Импортируем prompt, random."""
 from random import SystemRandom
 
+RULE = 'Find the greatest common divisor of given numbers.'
+LEN_RANDOM = (0, 100)
+
 
 def brain_gcd():
     """Функция игры brain-gcd.
@@ -10,33 +13,31 @@ def brain_gcd():
     Returns:
         Dict: правильный ответ, правила, вопрос.
     """
-    two_numbers = get_two_numbers()
-    correct_answer = get_max_gcd(two_numbers)
-    rule = 'Find the greatest common divisor of given numbers.'
+    number1, number2 = get_two_numbers()
+    correct_answer = get_max_gcd(number1, number2)
     question = 'Question: {num1} {num2}'.format(
-        num1=two_numbers[0],
-        num2=two_numbers[1],
+        num1=number1,
+        num2=number2,
     )
     return {
         'correct_answer': correct_answer,
-        'rule': rule,
+        'rule': RULE,
         'question': question,
     }
 
 
-def get_max_gcd(two_numbers):
+def get_max_gcd(number1, number2):
     """Функция вычисления max делителя 2х чисел.
 
     Args:
-        two_numbers: два числа в кортеже.
+        number1: число 1.
+        number2: число 2.
 
     Returns:
         int: наибольший делитель.
     """
-    rand_num1 = two_numbers[0]
-    rand_num2 = two_numbers[1]
-    num1_gcd = devisors(rand_num1)
-    num2_gcd = devisors(rand_num2)
+    num1_gcd = devisors(number1)
+    num2_gcd = devisors(number2)
     return max(list(set(num1_gcd) & set(num2_gcd)))
 
 
@@ -47,8 +48,8 @@ def get_two_numbers():
         tupl: 2 числа.
     """
     cryptogen = SystemRandom()
-    rand_num1 = cryptogen.randrange(start=1, stop=100)
-    rand_num2 = cryptogen.randrange(start=1, stop=100)
+    rand_num1 = cryptogen.randrange(*LEN_RANDOM)
+    rand_num2 = cryptogen.randrange(*LEN_RANDOM)
     return (rand_num1, rand_num2)
 
 

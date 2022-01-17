@@ -3,6 +3,9 @@
 """Импортируем prompt, random."""
 from random import SystemRandom
 
+RULE = 'What is the result of the expression?'
+LEN_RANDOM = (0, 10)
+
 
 def brain_calc():
     """Функция игры brain-calc.
@@ -11,22 +14,21 @@ def brain_calc():
         Dict: правильный ответ, правила, вопрос.
     """
     math_operator = get_math_operator()
-    two_numbers = get_two_numbers()
+    number1, number2 = get_two_numbers()
     if math_operator == '+':
-        correct_answer = two_numbers[0] + two_numbers[1]
+        correct_answer = number1 + number2
     elif math_operator == '-':
-        correct_answer = two_numbers[0] - two_numbers[1]
+        correct_answer = number1 - number2
     elif math_operator == '*':
-        correct_answer = two_numbers[0] * two_numbers[1]
-    rule = 'What is the result of the expression?'
+        correct_answer = number1 * number2
     question = 'Question: {n1} {op} {n2}'.format(
-        n1=two_numbers[0],
+        n1=number1,
         op=math_operator,
-        n2=two_numbers[1],
+        n2=number2,
     )
     return {
         'correct_answer': correct_answer,
-        'rule': rule,
+        'rule': RULE,
         'question': question,
     }
 
@@ -50,6 +52,6 @@ def get_two_numbers():
         tupl: 2 числа.
     """
     cryptogen = SystemRandom()
-    rand_num1 = cryptogen.randrange(start=0, stop=10)
-    rand_num2 = cryptogen.randrange(start=0, stop=10)
-    return (rand_num1, rand_num2)
+    rand_num1 = cryptogen.randrange(*LEN_RANDOM)
+    rand_num2 = cryptogen.randrange(*LEN_RANDOM)
+    return rand_num1, rand_num2

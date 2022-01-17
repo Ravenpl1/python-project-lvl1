@@ -3,6 +3,9 @@
 """Импортируем random."""
 from random import SystemRandom
 
+RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
+LEN_RANDOM = (0, 100)
+
 
 def brain_even():
     """Функция игры brain-even.
@@ -10,12 +13,11 @@ def brain_even():
     Returns:
         Dict: правильный ответ, правила, вопрос.
     """
-    rand_num1 = SystemRandom().randrange(0, 100, 1)
+    rand_num1 = SystemRandom().randrange(*LEN_RANDOM)
     correct_answer = 'yes' if rand_num1 % 2 == 0 else 'no'
-    rule = 'Answer "yes" if the number is even, otherwise answer "no".'
     question = 'Question: {0}'.format(rand_num1)
     return {
         'correct_answer': correct_answer,
-        'rule': rule,
+        'rule': RULE,
         'question': question,
     }
