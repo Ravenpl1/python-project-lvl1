@@ -1,9 +1,6 @@
 ### Hexlet tests and linter status:
 [![hexlet-check](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/hexlet-check.yml)
 
-### Style
-[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
-
 ### Python CI
 [![Python CI](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/pyci.yml/badge.svg)](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/pyci.yml)
 
