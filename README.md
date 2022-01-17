@@ -1,6 +1,9 @@
 ### Hexlet tests and linter status:
 [![hexlet-check](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/hexlet-check.yml)
 
+### Linter
+[![Linter](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/linter.yml)
+
 ### Python CI
 [![Python CI](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/pyci.yml/badge.svg)](https://github.com/Ravenpl1/python-project-lvl1/actions/workflows/pyci.yml)
 
