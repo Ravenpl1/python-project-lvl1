@@ -6,5 +6,6 @@ from brain_games.games import progression
 
 def test_progression():
     """Функция теста игры brain_progression."""
-    generate_data = tuple(progression.brain_progression().keys())
-    assert generate_data == ('correct_answer', 'rule', 'question')
+    correct_answer, question = progression.brain_progression()
+    assert type(correct_answer) is str
+    assert type(question) is str

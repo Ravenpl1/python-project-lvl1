@@ -6,5 +6,6 @@ from brain_games.games import gcd
 
 def test_gcd():
     """Функция теста игры brain_gcd."""
-    generate_data = tuple(gcd.brain_gcd().keys())
-    assert generate_data == ('correct_answer', 'rule', 'question')
+    correct_answer, question = gcd.brain_gcd()
+    assert type(correct_answer) is int
+    assert type(question) is str

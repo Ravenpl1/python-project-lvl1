@@ -6,5 +6,6 @@ from brain_games.games import even
 
 def test_even():
     """Функция теста игры brain_even."""
-    generate_data = tuple(even.brain_even().keys())
-    assert generate_data == ('correct_answer', 'rule', 'question')
+    correct_answer, question = even.brain_even()
+    assert type(correct_answer) is str
+    assert type(question) is str
