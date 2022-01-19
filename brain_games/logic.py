@@ -1,38 +1,33 @@
 # -*- coding: utf-8 -*- #
 
 """Импортируем welcome_user."""
-from brain_games.cli import (
-    ask_question,
-    display_correct,
-    display_rule,
-    end_game,
-    get_answer,
-    lost_game,
-    welcome_user,
-)
+import prompt
+from brain_games.cli import welcome_user
 
 # Константы.
-ROUNDS = 3
+NUMBER_OF_ROUNDS = 3
 
 
-def games_logic(game):
+def games_logic(game, rule):
     """Функция общей логики игр.
 
     Args:
         game: игра.
+        rule: правила игры.
     """
     user = welcome_user()
-    generate_data = game()
-    display_rule(generate_data['rule'])
-    for _ in range(ROUNDS):
-        correct_answer = str(generate_data['correct_answer'])
-        ask_question(generate_data['question'])
-        user_answer = get_answer()
-        if user_answer == correct_answer:
-            display_correct()
-            generate_data = game()
+    correct_answer, question = game()
+    print(rule)
+    for _ in range(NUMBER_OF_ROUNDS):
+        print('Question: {0}'.format(question))
+        user_answer = prompt.string('Your answer: ')
+        if user_answer == str(correct_answer):
+            print('Correct!')
+            correct_answer, question = game()
         else:
-            lost_game(user_answer, correct_answer, user)
+            print("'{0}' is wrong answer ;(. ".format(user_answer), end='')
+            print("Correct answer was '{0}'.".format(correct_answer))
+            print("Let's try again, {0}!".format(user))
             break
     else:
-        end_game(user)
+        print('Congratulations, {0}!'.format(user))

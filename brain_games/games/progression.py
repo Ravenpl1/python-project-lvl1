@@ -4,7 +4,6 @@
 from random import SystemRandom
 
 # Константы.
-RULE = 'What number is missing in the progression?'
 LEN_PROGRESSION = (5, 11)
 LEN_STEP = (1, 10)
 
@@ -19,12 +18,8 @@ def brain_progression():
     correct_answer = get_random_element(progression)
     progression[progression.index(correct_answer)] = '..'
     question_data = ' '.join(progression)
-    question = 'Question: {0}'.format(question_data)
-    return {
-        'correct_answer': correct_answer,
-        'rule': RULE,
-        'question': question,
-    }
+    question = '{0}'.format(question_data)
+    return correct_answer, question
 
 
 def get_progression():

@@ -4,7 +4,6 @@
 from random import SystemRandom
 
 # Константы.
-RULE = 'Find the greatest common divisor of given numbers.'
 LEN_RANDOM = (0, 100)
 
 
@@ -16,15 +15,11 @@ def brain_gcd():
     """
     number1, number2 = get_two_numbers()
     correct_answer = get_max_gcd(number1, number2)
-    question = 'Question: {num1} {num2}'.format(
+    question = '{num1} {num2}'.format(
         num1=number1,
         num2=number2,
     )
-    return {
-        'correct_answer': correct_answer,
-        'rule': RULE,
-        'question': question,
-    }
+    return correct_answer, question
 
 
 def get_max_gcd(number1, number2):

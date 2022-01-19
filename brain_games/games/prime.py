@@ -4,7 +4,6 @@
 from random import SystemRandom
 
 # Константы.
-RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 LEN_RANDOM = (0, 100)
 
 
@@ -17,12 +16,8 @@ def brain_prime():
     rand_num1 = SystemRandom().randrange(*LEN_RANDOM)
     num_is_prime = is_prime(rand_num1)
     correct_answer = 'yes' if num_is_prime else 'no'
-    question = 'Question: {0}'.format(rand_num1)
-    return {
-        'correct_answer': correct_answer,
-        'rule': RULE,
-        'question': question,
-    }
+    question = '{0}'.format(rand_num1)
+    return correct_answer, question
 
 
 def is_prime(number):

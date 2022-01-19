@@ -4,7 +4,6 @@
 from random import SystemRandom
 
 # Константы.
-RULE = 'What is the result of the expression?'
 LEN_RANDOM = (0, 10)
 
 
@@ -22,16 +21,12 @@ def brain_calc():
         correct_answer = number1 - number2
     elif math_operator == '*':
         correct_answer = number1 * number2
-    question = 'Question: {n1} {op} {n2}'.format(
+    question = '{n1} {op} {n2}'.format(
         n1=number1,
         op=math_operator,
         n2=number2,
     )
-    return {
-        'correct_answer': correct_answer,
-        'rule': RULE,
-        'question': question,
-    }
+    return correct_answer, question
 
 
 def get_math_operator():
