@@ -4,11 +4,12 @@
 from random import SystemRandom
 
 # Константы.
+RULE = 'What number is missing in the progression?'
 LEN_PROGRESSION = (5, 11)
 LEN_STEP = (1, 10)
 
 
-def brain_progression():
+def get_round_data():
     """Функция игры brain-progression.
 
     Returns:

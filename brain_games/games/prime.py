@@ -4,10 +4,11 @@
 from random import SystemRandom
 
 # Константы.
+RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 LEN_RANDOM = (0, 100)
 
 
-def brain_prime():
+def get_round_data():
     """Функция игры brain-prime.
 
     Returns:

@@ -4,10 +4,11 @@
 from random import SystemRandom
 
 # Константы.
+RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
 LEN_RANDOM = (0, 100)
 
 
-def brain_even():
+def get_round_data():
     """Функция игры brain-even.
 
     Returns:

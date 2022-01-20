@@ -4,10 +4,11 @@
 from random import SystemRandom
 
 # Константы.
+RULE = 'Find the greatest common divisor of given numbers.'
 LEN_RANDOM = (0, 100)
 
 
-def brain_gcd():
+def get_round_data():
     """Функция игры brain-gcd.
 
     Returns:
